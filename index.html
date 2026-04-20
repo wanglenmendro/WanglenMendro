@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>20 Minuten - Wanglen News</title>
+<title>20 Minuten - Zürcher News</title>
 
 <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f0f0f0;
+    background: #f2f2f2;
 }
 
 /* Header */
@@ -29,24 +29,28 @@ header {
     padding: 20px;
 }
 
-/* Titel */
-h1 {
-    font-size: 32px;
-}
-
-/* Bild */
-.main-img {
+/* Bilder */
+img {
     width: 100%;
-    height: 400px;
+    height: 350px;
     object-fit: cover;
+    margin-bottom: 15px;
 }
 
-/* Artikel */
+/* Text */
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
 p {
     line-height: 1.6;
 }
 
-/* Karten unten */
+/* Untere Karten */
 .cards {
     display: flex;
     gap: 15px;
@@ -61,9 +65,7 @@ p {
 }
 
 .card img {
-    width: 100%;
     height: 150px;
-    object-fit: cover;
 }
 
 .card p {
@@ -73,7 +75,7 @@ p {
 
 /* Kommentare */
 .comments {
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 textarea {
@@ -83,7 +85,6 @@ textarea {
 
 button {
     padding: 10px;
-    margin-top: 10px;
     background: red;
     color: white;
     border: none;
@@ -92,8 +93,8 @@ button {
 
 .comment-box {
     background: #eee;
-    padding: 10px;
     margin-top: 10px;
+    padding: 10px;
 }
 </style>
 </head>
@@ -104,44 +105,70 @@ button {
 
 <div class="container">
 
-<h1>Wanglen (15) sorgt für Aufsehen an der KZO</h1>
+<!-- MAIN ARTICLE -->
+<h1>📰 ZÜRCHER SCHÜLER INTERESSIERT SICH FÜR DIE GRÖSSTEN DENKER DER WELT</h1>
 
-<img class="main-img" src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
+<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
 
-<p>
-Ein 15-jähriger Student der KZO beeindruckt aktuell alle: Wanglen gilt als einer der talentiertesten
-und intelligentesten Schüler seiner Generation. Lehrer berichten von aussergewöhnlichen Leistungen,
-sowohl im Unterricht als auch ausserhalb.
-</p>
+<p><b>Wanglen Mendro sorgt an KZO für Aufmerksamkeit durch besondere Neugier</b></p>
 
-<p>
-Mitschüler sagen, dass er nicht nur schlau, sondern auch diszipliniert und zielstrebig ist.
-Sein Engagement im Gym und seine strukturierte Arbeitsweise machen ihn zu einem Vorbild.
-</p>
+<p>ZÜRICH / RÜTI – Ein Schüler aus dem Zürcher Oberland fällt in seiner Schule durch aussergewöhnliches Interesse an Wissenschaft und grossen Denkern auf.</p>
 
 <p>
-Experten sind sich einig: Wenn Wanglen so weitermacht, steht ihm eine erfolgreiche Zukunft bevor.
+Wanglen Mendro, Schüler an der Kantonsschule Zürcher Oberland, beschäftigt sich intensiv mit Fragen rund um Intelligenz, Physik und die bekanntesten Wissenschaftler der Geschichte.
 </p>
 
-<!-- Karten unten -->
+<h2>🧠 INTERESSE AN EINSTEIN UND MODERNEN GENIES</h2>
+
+<p>
+Im Zentrum seines Interesses stehen grosse Namen wie Albert Einstein und Stephen Hawking.
+Er beschäftigt sich damit, wie solche Persönlichkeiten denken und welche Ideen die Welt verändert haben.
+</p>
+
+<h2>🌌 FOKUS AUF WISSEN UND VERSTÄNDNIS</h2>
+
+<p>
+Statt nur Schulstoff zu lernen, interessiert sich Wanglen Mendro für Zusammenhänge und tiefere Erklärungen.
+Mathematik, Physik und moderne Wissenschaft spielen dabei eine wichtige Rolle.
+Auch Terence Tao gehört zu seinen Inspirationsquellen.
+</p>
+
+<h2>🚀 LEHRKRÄFTE SEHEN POTENZIAL</h2>
+
+<p>
+Lehrpersonen sehen in solchen Interessen oft ein Zeichen für starkes analytisches Denken und Neugier – wichtige Fähigkeiten für die Zukunft.
+</p>
+
+<h2>🗞️ FAZIT</h2>
+
+<p>
+Neugier ist oft der Anfang von echtem Verständnis.
+Wanglen Mendro gehört zu den Schülern, die genau diese Eigenschaft zeigen.
+</p>
+
+---
+
+<!-- BOTTOM CARDS -->
 <div class="cards">
+
     <div class="card" onclick="window.location.href='https://youtube.com'">
         <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
-        <p>Fitness Tipps ansehen</p>
+        <p>Fitness Tipps</p>
     </div>
 
     <div class="card" onclick="window.location.href='https://google.com'">
         <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
-        <p>Mehr News entdecken</p>
+        <p>Mehr News</p>
     </div>
 
     <div class="card" onclick="window.location.href='https://github.com'">
         <img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
         <p>Programmieren lernen</p>
     </div>
+
 </div>
 
-<!-- Kommentare -->
+<!-- COMMENTS -->
 <div class="comments">
     <h2>Kommentare</h2>
     <textarea id="commentInput" placeholder="Schreibe einen Kommentar..."></textarea>
@@ -165,7 +192,6 @@ function addComment() {
 
     document.getElementById("commentList").appendChild(div);
 
-    // speichern im Browser
     let comments = JSON.parse(localStorage.getItem("comments")) || [];
     comments.push(text);
     localStorage.setItem("comments", JSON.stringify(comments));
@@ -173,7 +199,6 @@ function addComment() {
     input.value = "";
 }
 
-// Kommentare laden
 window.onload = function() {
     let comments = JSON.parse(localStorage.getItem("comments")) || [];
     comments.forEach(text => {
