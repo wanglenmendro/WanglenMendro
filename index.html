@@ -3,54 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>20 Minuten - Wanglen News</title>
+<title>20 Minuten - Artikel</title>
 
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Georgia, serif;
     background: #f2f2f2;
+    color: #111;
 }
 
-/* Header */
 header {
-    background: red;
+    background: #d60000;
     color: white;
-    padding: 15px;
-    font-size: 30px;
+    padding: 15px 20px;
+    font-size: 28px;
     font-weight: bold;
 }
 
-/* Container */
 .container {
-    max-width: 900px;
+    max-width: 850px;
     margin: auto;
     background: white;
-    padding: 20px;
+    padding: 25px;
 }
 
-/* Bild */
-img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    margin-bottom: 15px;
-}
-
-/* Text */
 h1 {
     font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.meta {
+    color: gray;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    margin: 15px 0;
+}
+
+p {
+    line-height: 1.7;
+    margin-bottom: 15px;
 }
 
 h2 {
     margin-top: 25px;
+    font-size: 20px;
 }
 
-p {
-    line-height: 1.6;
-}
-
-/* Karten unten */
 .cards {
     display: flex;
     gap: 15px;
@@ -59,21 +64,23 @@ p {
 
 .card {
     width: 33%;
-    background: white;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    background: #fff;
+    border: 1px solid #ddd;
     cursor: pointer;
 }
 
 .card img {
-    height: 150px;
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
 }
 
 .card p {
     padding: 10px;
     font-weight: bold;
+    font-size: 14px;
 }
 
-/* Kommentare */
 .comments {
     margin-top: 50px;
 }
@@ -81,11 +88,14 @@ p {
 textarea {
     width: 100%;
     height: 80px;
+    padding: 10px;
+    font-family: inherit;
 }
 
 button {
-    padding: 10px;
-    background: red;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #d60000;
     color: white;
     border: none;
     cursor: pointer;
@@ -93,8 +103,9 @@ button {
 
 .comment-box {
     background: #eee;
-    margin-top: 10px;
     padding: 10px;
+    margin-top: 10px;
+    font-size: 14px;
 }
 </style>
 </head>
@@ -107,94 +118,80 @@ button {
 
 <h1>Der einzigartige Wanglen Mendro</h1>
 
-<p><b>Wetzikon – In den Gängen der Kantonsschule Zürcher Oberland spricht man seit Wochen über einen Namen, der sich schneller verbreitet als ein Gerücht in der grossen Pause: Wanglen Mendro, 15 Jahre alt, Schüler, Sporttalent – und laut mehreren Mitschülern „der wahrscheinlich fantastischste Mensch der Schweiz“.</b></p>
+<div class="meta">Wetzikon – Kantonsschule Zürcher Oberland</div>
 
-<img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d">
+<p>In den Gängen der Kantonsschule Zürcher Oberland spricht man seit Wochen über einen Namen, der sich schneller verbreitet als ein Gerücht in der grossen Pause: Wanglen Mendro, 15 Jahre alt, Schüler, Sporttalent – und laut mehreren Mitschülern „der wahrscheinlich fantastischste Mensch der Schweiz“.</p>
 
 <p>Was als Scherz begann, hat sich inzwischen zu einer kleinen lokalen Sensation entwickelt. Denn Wanglen sammelt nicht nur Goldmedaillen im Schwimmen und Springen, sondern hält auch einen inoffiziellen Weltrekord im „Fantastisch-sein“.</p>
 
-<h2>🏊 Ein Schüler, der alles kann – und noch mehr</h2>
+<img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d">
 
-<p>
-Im Schwimmen hat er mehrere Goldmedaillen gewonnen. Seine Trainerin beschreibt ihn als Mischung aus Delfin, Turbo-Motor und jemandem, der nie müde wird.
-</p>
+<h2>Ein Schüler, der alles kann – und noch mehr</h2>
 
-<p>
-Beim Springen zeigt er dieselbe Leichtigkeit – sogar Stürze wirken bei ihm wie Absicht.
-</p>
+<p>Wer Wanglen im Schulhaus begegnet, sieht zuerst einen ganz normalen Jugendlichen: Rucksack, Kopfhörer, ein leicht verschlafener Blick am Morgen. Doch hinter dieser Fassade steckt ein Schüler, der in mehreren Disziplinen glänzt.</p>
 
-<p>
-Auch im „Chillen“ gewann er Gold: ein Wettbewerb über Coolness, Entspannung und absolut nichts tun.
-</p>
+<p>Im Schwimmen hat er bereits mehrere Goldmedaillen gewonnen. Seine Trainerin beschreibt ihn als „eine Mischung aus Delfin, Turbo-Motor und jemandem, der einfach nie müde wird“.</p>
 
-<h2>🌟 Der Weltrekord im Fantastisch-sein</h2>
+<p>Beim Springen – ob vom Startblock, vom Brett oder einfach über Hindernisse im Alltag – zeigt er dieselbe Leichtigkeit. „Er landet immer perfekt“, sagt ein Mitschüler. „Sogar wenn er stolpert, sieht es aus wie Absicht.“</p>
 
-<p>
-Offiziell nicht anerkannt – aber in der Schulwelt unbestritten: Wanglen hält den Weltrekord im Fantastisch-sein.
-</p>
+<p>Doch die wohl ungewöhnlichste Auszeichnung ist seine Goldmedaille im Chillen. Ein Wettbewerb, bei dem Entspannung, Coolness und nichts tun bewertet wurde – und den Wanglen klar gewann.</p>
 
-<p>
-„Er könnte eine Banane essen und es wäre episch“, sagen Mitschüler.
-Lehrpersonen sprechen von einer „besonderen Ausstrahlung“.
-</p>
+<h2>Der Weltrekord im Fantastisch-sein</h2>
 
-<h2>🎓 Schule, Sport und Legende</h2>
+<p>Der Höhepunkt seiner Legendenbildung ist der Weltrekord im Fantastisch-sein. Offiziell nicht anerkannt, aber in der Schulwelt unbestritten.</p>
 
-<p>
-Trotz allem bleibt er normaler Schüler der KZO: Prüfungen, Hausaufgaben und manchmal vergessene Etuis gehören dazu.
-</p>
+<p>„Er ist einfach fantastisch. Egal was er macht“, sagt eine Schülerin. „Er könnte eine Banane essen und es würde aussehen wie ein epischer Moment.“</p>
 
-<p>
-Sein „Chill-Modus“ ist legendär: Sobald er ihn aktiviert, wird die ganze Umgebung entspannter.
-</p>
+<p>Lehrpersonen bestätigen zumindest eine besondere Ausstrahlung. Ein Lehrer meint schmunzelnd: „Wenn es eine Note für Fantastisch-sein gäbe, hätte er eine 6.5.“</p>
 
-<h2>🔥 Ein Vorbild wider Willen</h2>
+<h2>Zwischen Schule, Sport und Legendenstatus</h2>
 
-<p>
-Viele jüngere Schüler sehen in ihm ein Vorbild. Nicht wegen Perfektion, sondern wegen Humor, Talent und Gelassenheit.
-</p>
+<p>Trotz der Aufmerksamkeit bleibt Wanglen bescheiden. Er besucht die KZO wie jeder andere, schreibt Prüfungen, vergisst manchmal sein Etui und kämpft sich durch Matheaufgaben.</p>
 
-<p>
-Ein Lehrer meint scherzhaft: „Wenn es eine Note für Fantastisch-sein gäbe, hätte er eine 6.5.“
-</p>
+<p>Sein Alltag ist eine Mischung aus Training, Hausaufgaben und spontanen Pausenplatz-Challenges, die er meistens gewinnt.</p>
 
-<h2>🗞️ Fazit</h2>
+<p>Besonders bekannt ist sein „Chill-Modus“, den er jederzeit aktivieren kann. Dann wirkt alles um ihn herum entspannter.</p>
 
-<p>
-Ob Sportler, Schüler oder lokale Legende – Wanglen Mendro ist für viele bereits jetzt einzigartig.
-</p>
+<h2>Ein Vorbild – auch ohne es zu wollen</h2>
 
-<p><b>Und sein Weltrekord im Fantastisch-sein? Der bleibt vermutlich noch lange ungeschlagen.</b></p>
+<p>Viele jüngere Schüler sehen in ihm ein Vorbild. Nicht wegen Perfektion, sondern wegen Humor, Talent und Gelassenheit.</p>
+
+<p>Lehrpersonen betonen, dass solche Eigenschaften selten seien und wichtig für die Zukunft.</p>
+
+<p>Auch wenn vieles über ihn übertrieben wirkt, bleibt eines klar: Die Geschichten über Wanglen haben sich im Schulalltag festgesetzt.</p>
+
+<h2>Fazit</h2>
+
+<p>In einer Schule voller Talente ist Wanglen Mendro für viele bereits jetzt eine besondere Erscheinung.</p>
+
+<p>Ob Sportler, Schüler oder lokale Legende – sein Ruf wächst weiter.</p>
 
 ---
 
-<!-- BOTTOM CARDS -->
 <div class="cards">
 
-    <div class="card" onclick="window.location.href='https://youtube.com'">
-        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
-        <p>Fitness Tipps</p>
-    </div>
+<div class="card" onclick="window.location.href='https://youtube.com'">
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
+<p>Sport</p>
+</div>
 
-    <div class="card" onclick="window.location.href='https://google.com'">
-        <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
-        <p>Mehr News</p>
-    </div>
+<div class="card" onclick="window.location.href='https://google.com'">
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+<p>News</p>
+</div>
 
-    <div class="card" onclick="window.location.href='https://github.com'">
-        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
-        <p>Programmieren lernen</p>
-    </div>
+<div class="card" onclick="window.location.href='https://github.com'">
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+<p>Tech</p>
+</div>
 
 </div>
 
-<!-- COMMENTS -->
 <div class="comments">
-    <h2>Kommentare</h2>
-    <textarea id="commentInput" placeholder="Schreibe einen Kommentar..."></textarea>
-    <button onclick="addComment()">Posten</button>
-
-    <div id="commentList"></div>
+<h2>Kommentare</h2>
+<textarea id="commentInput" placeholder="Kommentar schreiben..."></textarea>
+<button onclick="addComment()">Senden</button>
+<div id="commentList"></div>
 </div>
 
 </div>
@@ -202,17 +199,16 @@ Ob Sportler, Schüler oder lokale Legende – Wanglen Mendro ist für viele bere
 <script>
 function addComment() {
     const input = document.getElementById("commentInput");
-    const text = input.value;
-    if(text === "") return;
+    if(input.value === "") return;
 
     const div = document.createElement("div");
     div.className = "comment-box";
-    div.innerText = text;
+    div.innerText = input.value;
 
     document.getElementById("commentList").appendChild(div);
 
     let comments = JSON.parse(localStorage.getItem("comments")) || [];
-    comments.push(text);
+    comments.push(input.value);
     localStorage.setItem("comments", JSON.stringify(comments));
 
     input.value = "";
