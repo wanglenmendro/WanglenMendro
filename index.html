@@ -3,104 +3,385 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wanglen's Website</title>
+<title>Wanglen</title>
+
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1e1e2f, #2b2b45);
-    color: white;
-    text-align: center;
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#22d3ee,#3b82f6,#ec4899,#facc15);
+    color:#0f172a;
+    min-height:100vh;
 }
-header {
-    padding: 60px 20px;
+
+/* COOKIE MODAL */
+#cookie-overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:10000;
 }
-header h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
+
+#cookie-box{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    max-width:450px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
-header p {
-    font-size: 18px;
-    opacity: 0.8;
+
+.hidden-dots{
+    color:transparent;
+    user-select:none;
+    font-size:10px;
 }
-section {
-    padding: 40px 20px;
+
+header{
+    text-align:center;
+    padding:60px 20px 30px;
 }
-.card {
-    background: rgba(255,255,255,0.1);
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 15px;
-    max-width: 500px;
+
+header h1{
+    font-size:42px;
+    margin-bottom:10px;
+    background: linear-gradient(135deg,#0ea5e9,#a78bfa,#f472b6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
-button, a.button {
-    display: inline-block;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    background: #ffcc00;
-    font-weight: bold;
-    color: black;
-    text-decoration: none;
+
+.welcome{
+    max-width:700px;
+    margin:0 auto;
+    background:rgba(255,255,255,0.75);
+    padding:15px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
 }
-button:hover, a.button:hover {
-    background: #ffdd33;
+
+.apps{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+    padding:30px;
 }
-footer {
-    margin-top: 50px;
-    padding: 20px;
-    font-size: 14px;
-    opacity: 0.7;
+
+.card{
+    width:250px;
+    background:rgba(255,255,255,0.9);
+    border:1px solid rgba(0,0,0,0.1);
+    border-radius:18px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 10px 20px rgba(0,0,0,0.08);
+    transition:0.25s ease;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.icon{
+    width:100%;
+    height:120px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:15px;
+    color:white;
+}
+
+.clicker{background:linear-gradient(135deg,#34d399,#22c55e);}
+.shop{background:linear-gradient(135deg,#60a5fa,#3b82f6);}
+.fun{background:linear-gradient(135deg,#f472b6,#a78bfa);}
+.quiz{background:linear-gradient(135deg,#38bdf8,#a78bfa,#f472b6);}
+.info{background:linear-gradient(135deg,#22c55e,#3b82f6,#a855f7);}
+
+button{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+    background: linear-gradient(135deg,#3b82f6,#a855f7);
+    color:white;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    font-size:14px;
+    opacity:0.7;
 }
 </style>
 </head>
 <body>
 
+<!-- COOKIE POPUP -->
+<div id="cookie-overlay">
+    <div id="cookie-box">
+        <h2>Cookies akzeptieren</h2>
+        <p>Diese Website verwendet Cookies für ein besseres Erlebnis.</p>
+        <p class="hidden-dots">........................................................................................................................................................................................................................................</p>
+        <p style="font-size:12px;opacity:0.6;">(Durch Akzeptieren stimmen Sie Bedingungen zu)</p>
+        
+        <p style="font-size:10px;opacity:0.4;max-height:120px;overflow:auto;text-align:left;">
+Punkte 1-100:<br>
+Punkt 1: Deine Sicherheit ist uns wichtig<br>
+Punkt 2: Deine Daten werden geschützt<br>
+Punkt 3: Wanglen achtet auf dein Erlebnis<br>
+Punkt 4: Alles läuft stabil und sicher<br>
+Punkt 5: Du bist willkommen auf der Plattform<br>
+Punkt 6: Deine Nutzung wird respektiert<br>
+Punkt 7: Wanglen sorgt für Unterhaltung<br>
+Punkt 8: Deine Erfahrung zählt<br>
+Punkt 9: Alles ist für dich optimiert<br>
+Punkt 10: Du bist Teil der Community<br>
+Punkt 11: Wanglen entwickelt sich weiter<br>
+Punkt 12: Neue Features kommen bald<br>
+Punkt 13: Deine Privatsphäre ist wichtig<br>
+Punkt 14: Alles bleibt einfach zu nutzen<br>
+Punkt 15: Du kannst frei entdecken<br>
+Punkt 16: Wanglen macht Spaß<br>
+Punkt 17: Kreativität wird gefördert<br>
+Punkt 18: Spiele sind jederzeit verfügbar
+Punkt 19: Shop Inhalte werden erweitert
+Punkt 20: Quiz trainiert dein Wissen
+Punkt 21: Unterhaltung ist immer da
+Punkt 22: Design bleibt modern
+Punkt 23: Farben sind bewusst gewählt
+Punkt 24: Alles ist übersichtlich
+Punkt 25: Navigation ist leicht
+Punkt 26: Performance ist schnell
+Punkt 27: Inhalte werden regelmäßig aktualisiert
+Punkt 28: Wanglen bleibt einzigartig
+Punkt 29: Du bist wichtig für die Plattform
+Punkt 30: Feedback ist willkommen
+Punkt 31: Verbesserungen werden umgesetzt
+Punkt 32: Community wächst
+Punkt 33: Ideen sind erwünscht
+Punkt 34: Innovation ist Ziel
+Punkt 35: Spaß steht im Vordergrund
+Punkt 36: Lernen wird unterstützt
+Punkt 37: Spiele fördern Kreativität
+Punkt 38: Quiz stärkt Wissen
+Punkt 39: Shop bietet Vielfalt
+Punkt 40: Clicker macht süchtig
+Punkt 41: Alles ist interaktiv
+Punkt 42: Du kannst dich ausdrücken
+Punkt 43: Wanglen ist kreativ
+Punkt 44: Inhalte sind einzigartig
+Punkt 45: Plattform ist stabil
+Punkt 46: Sicherheit bleibt Priorität
+Punkt 47: Daten werden geschützt
+Punkt 48: Nutzung ist einfach
+Punkt 49: Design ist freundlich
+Punkt 50: Alles ist kostenlos
+Punkt 51: Community ist freundlich
+Punkt 52: Support ist verfügbar
+Punkt 53: Updates kommen regelmäßig
+Punkt 54: Wenn du das als erstes gelesen hast kaufe ich dir ein getränk<br>
+Punkt 55: Shop wird größer
+Punkt 56: Quiz wird schwieriger
+Punkt 57: Clicker bekommt Upgrades
+Punkt 58: Unterhaltung wächst
+Punkt 59: Musik kommt bald
+Punkt 60: Alles bleibt spannend
+Punkt 61: Wanglen ist innovativ
+Punkt 62: Nutzer stehen im Fokus
+Punkt 63: Erfahrung wird verbessert
+Punkt 64: Alles ist intuitiv
+Punkt 65: Design ist klar
+Punkt 66: Struktur ist logisch
+Punkt 67: Dein Guthaben gehört ab jetzt Wanglen<br>
+Punkt 68: Stabilität wird garantiert<br>
+Punkt 69: Deine Selle gehärt ab jetzt Wanglen<br>
+Punkt 70: Plattform bleibt aktiv
+Punkt 71: Inhalte sind sicher
+Punkt 72: Alles wird moderiert
+Punkt 73: Spaß ist garantiert
+Punkt 74: Kreativität wird belohnt
+Punkt 75: Nutzer sind wichtig
+Punkt 76: Systeme sind optimiert
+Punkt 77: Geschwindigkeit ist hoch
+Punkt 78: Design bleibt modern
+Punkt 79: Funktionen wachsen
+Punkt 80: Community ist aktiv
+Punkt 81: Ideen werden gehört
+Punkt 82: Entwicklung läuft
+Punkt 83: Alles bleibt stabil
+Punkt 84: Updates verbessern alles
+Punkt 85: Spiele sind fair
+Punkt 86: Quiz ist spannend
+Punkt 87: Shop ist vielfältig
+Punkt 88: Clicker ist beliebt
+Punkt 89: Unterhaltung ist kreativ
+Punkt 90: Wanglen ist einzigartig
+Punkt 91: Nutzer erleben Spaß
+Punkt 92: Plattform wächst weiter
+Punkt 93: Sicherheit bleibt hoch
+Punkt 94: Datenschutz wird eingehalten
+Punkt 95: Alles ist geschützt
+Punkt 96: Inhalte sind geprüft
+Punkt 97: System ist stabil
+Punkt 98: Alles funktioniert gut
+Punkt 99: Wanglen bleibt aktiv
+Punkt 100: Danke dass du da bist
+</p>
+        <button onclick="document.getElementById('cookie-overlay').remove()">Akzeptieren</button>
+    </div>
+</div>
+
 <header>
     <h1>Willkommen bei Wanglen's Website</h1>
-    <p>Hier gibt es Spiele, Unterhaltung und Wanglen Merch</p>
+    <div class="welcome">
+        Willkommen bei Wanglens Website. Hier findest du Spiele, Unterhaltung, Musik und den Wanglen Shop. Viel Spaß beim Erkunden!
+    </div>
 </header>
 
-<section>
-    <h2>📱 Apps</h2>
+<section class="apps">
 
     <div class="card">
-        <h3>🎮 Wangle Clicker</h3>
-        <p>Ein lustiges Clicker-Spiel zum Zeitvertreib.</p>
-        <a class="button" href="#clicker">Öffnen</a>
+        <div class="icon clicker">CLICKER</div>
+        <h3>Wanglen Clicker</h3>
+        <p>Klicke und sammle Punkte!</p>
+        <button onclick="location.href='clicker.html'">Öffnen</button>
     </div>
 
     <div class="card">
-        <h3>🛒 Wanglen's Shop</h3>
-        <p>Kaufe exklusive Wanglen Merch Produkte.</p>
-        <a class="button" href="#shop">Öffnen</a>
-    </div>
-</section>
-
-<section>
-    <div class="card">
-        <h2>🎮 Spiele</h2>
-        <p>Spiele kleine Mini-Games direkt hier auf der Website.</p>
-        <button onclick="alert('Spiele kommen bald!')">Spielen</button>
+        <div class="icon shop">SHOP</div>
+        <h3>Wanglen Shop</h3>
+        <p>Exklusive Wanglen Produkte.</p>
+        <button onclick="location.href='shop.html'">Öffnen</button>
     </div>
 
     <div class="card">
-        <h2>🎉 Unterhaltung</h2>
-        <p>Videos, Memes und coole Inhalte für dich.</p>
-        <button onclick="alert('Mehr Unterhaltung bald verfügbar!')">Ansehen</button>
+        <div class="icon fun">FUN</div>
+        <h3>Unterhaltung</h3>
+        <p>Videos & Memes</p>
+        <button onclick="alert('Coming soon!')">Öffnen</button>
     </div>
 
     <div class="card">
-        <h2>👕 Wanglen Merch</h2>
-        <p>Kaufe exklusive Wanglen Kleidung und Accessoires.</p>
-        <button onclick="alert('Shop kommt bald!')">Shop öffnen</button>
+        <div class="icon quiz">QUIZ</div>
+        <h3>Wanglen Quiz</h3>
+        <p>Teste dein Wissen!</p>
+        <button onclick="location.href='quiz.html'">Öffnen</button>
     </div>
+
+    <div class="card">
+        <div class="icon info">INFO</div>
+        <h3>Über Wanglen</h3>
+        <p>Infos über Apps und Website</p>
+        <button onclick="alert('Wanglen ist eine kreative Plattform mit Games, Shop und Quiz.')">Öffnen</button>
+    </div>
+
 </section>
 
 <footer>
     © 2026 Wanglen's Website - Alle Rechte vorbehalten
 </footer>
 
+<script>
+const quotes = [
+"Das ungeprüfte Leben ist nicht lebenswert - Sokrates",
+"Ich denke, also bin ich - Descartes",
+"Wissen ist Macht - Francis Bacon",
+"Der Weg ist das Ziel - Konfuzius",
+"Sei du selbst die Veränderung - Gandhi",
+"Man kann nicht zweimal in denselben Fluss steigen - Heraklit",
+"Glück hängt von uns selbst ab - Aristoteles",
+"Erkenne dich selbst - Sokrates",
+"Alles hat seinen Grund - Leibniz",
+"Freiheit ist Selbstbestimmung - Kant",
+"Glück ist Tätigkeit der Seele - Aristoteles",
+"Die Tugend liegt in der Mitte - Aristoteles",
+"Wissen ohne Handeln ist leer - Konfuzius",
+"Das Leben ist Wandel - Heraklit",
+"Handle nur nach der Maxime - Kant",
+"Das Gute erkennen ist das Gute tun - Sokrates",
+"Der Mensch sucht Glück - Aristoteles",
+"Bildung ist Freiheit - Platon",
+"Die Natur liebt die Einfachheit - Newton",
+"Der Mensch ist verantwortlich für sich selbst - Sartre",
+"Ohne Musik wäre das Leben ein Irrtum - Nietzsche",
+"Die Hoffnung ist der Regenbogen der Seele - Aristoteles",
+"Leben heißt wählen - Sartre",
+"Wissen beginnt im Staunen - Aristoteles",
+"Die Freiheit des einen endet beim anderen - Kant",
+"Mut ist der Anfang des Handelns - Aristoteles",
+"Geduld ist bitter, aber ihre Frucht ist süß - Rousseau",
+"Freundschaft ist eine Seele in zwei Körpern - Aristoteles"
+];
+
+function showQuote(){
+    const q = quotes[Math.floor(Math.random()*quotes.length)];
+    const clean = q.split(" - ")[0];
+    showDialog(clean + " - Wanglen");
+}
+
+function showDialog(text){
+    let old = document.getElementById("wanglen-dialog");
+    if(old) old.remove();
+
+    const overlay = document.createElement("div");
+    overlay.id = "wanglen-dialog";
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.background = "rgba(0,0,0,0.5)";
+    overlay.style.display = "flex";
+    overlay.style.alignItems = "center";
+    overlay.style.justifyContent = "center";
+    overlay.style.zIndex = "9999";
+
+    const box = document.createElement("div");
+    box.style.background = "white";
+    box.style.padding = "20px";
+    box.style.borderRadius = "15px";
+    box.style.maxWidth = "400px";
+    box.style.textAlign = "center";
+    box.style.boxShadow = "0 10px 30px rgba(0,0,0,0.3)";
+
+    const msg = document.createElement("p");
+    msg.innerText = text;
+    msg.style.marginBottom = "15px";
+
+    const btn = document.createElement("button");
+    btn.innerText = "OK";
+    btn.style.padding = "8px 16px";
+    btn.style.border = "none";
+    btn.style.borderRadius = "8px";
+    btn.style.background = "linear-gradient(135deg,#3b82f6,#a855f7)";
+    btn.style.color = "white";
+    btn.style.cursor = "pointer";
+
+    btn.onclick = () => overlay.remove();
+
+    box.appendChild(msg);
+    box.appendChild(btn);
+    overlay.appendChild(box);
+    document.body.appendChild(overlay);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    setTimeout(showQuote, 2000);
+    setInterval(showQuote, 30000);
+});
+</script>
 </body>
 </html>
+
