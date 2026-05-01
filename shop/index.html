@@ -1,1 +1,245 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wanglen Ähnlichkeitsmesser</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: radial-gradient(circle at top, #021b1b, #00070a);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* CARD */
+.card {
+  width: 92%;
+  max-width: 850px;
+  padding: 30px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.12);
+  text-align: center;
+  box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+}
+
+h1 {
+  font-size: 2.2rem;
+  background: linear-gradient(90deg, #00f5d4, #00bbf9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* INTRO */
+.intro {
+  padding: 20px;
+}
+
+.intro p {
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+.start-btn {
+  margin-top: 20px;
+  padding: 16px 28px;
+  border-radius: 14px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(90deg, #00f5d4, #00bbf9);
+  color: black;
+  transition: 0.2s;
+}
+
+.start-btn:hover {
+  transform: scale(1.05);
+}
+
+/* QUIZ */
+.progress {
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.question {
+  font-size: 1.3rem;
+  margin: 20px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.btn {
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0,255,204,0.08);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: rgba(0,255,204,0.2);
+}
+
+.result {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+.small {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>⚡ Wanglen Ähnlichkeitsmesser</h1>
+
+<!-- 👋 INTRO SCREEN -->
+<div id="intro" class="intro">
+  <h2>👋 Willkommen</h2>
+
+  <p>
+    Du bist hier beim <b>Wanglen Ähnlichkeitsmesser</b>.<br><br>
+
+    🔥 Beantworte 30 Fragen<br>
+    🧠 Wir vergleichen dich mit Wanglen<br>
+    📊 Am Ende bekommst du deinen % Score<br><br>
+
+    Kein Stress – einfach ehrlich antworten.
+  </p>
+
+  <button class="start-btn" onclick="startQuiz()">🚀 Start</button>
+</div>
+
+<!-- 🎮 QUIZ -->
+<div id="quiz" style="display:none;">
+  <div class="progress" id="progress"></div>
+  <div class="question" id="question"></div>
+  <div class="grid" id="answers"></div>
+</div>
+
+<div id="result" class="result" style="display:none;"></div>
+
+</div>
+
+<script>
+
+const questions = [
+["Bist du eher ein Morgen- oder Abendmensch?",["Morgen","Abend","Beides","Keines von beiden"]],
+["Was motiviert dich am meisten?",["Erfolg","Geld","Spass","Andere Menschen"]],
+["Wie triffst du Entscheidungen?",["Schnell","Nach langem Überlegen","Bauchgefühl","Ich frage andere"]],
+["Was machst du in deiner Freizeit am liebsten?",["Sport","Gaming","Freunde treffen","Draussen sein"]],
+["Wie gehst du mit Stress um?",["Sehr gut","Mittel","Schlecht","Kommt drauf an"]],
+["Was ist dir in Freundschaften am wichtigsten?",["Loyalität","Humor","Ehrlichkeit","Abenteuer"]],
+["Wie ordentlich bist du?",["Sehr","Mittel","Chaotisch","Kommt auf den Tag an"]],
+["Was ist dir bei einem Job am wichtigsten?",["Geld","Team","Spass","Erfahrung"]],
+["Wie gehst du mit neuen Situationen um?",["Mutig","Vorsichtig","Nervös","Neugierig"]],
+["Was ist dein Lernstil?",["Lesen","Videos","Ausprobieren","Zuhören"]],
+["Wie reagierst du, wenn etwas nicht klappt?",["Weiterprobieren","Pause machen","Hilfe holen","Aufgeben"]],
+["Was ist dir wichtiger?",["Freiheit","Sicherheit","Erfolg","Spass"]],
+["Wie gehst du mit Kritik um?",["Gut","Neutral","Schlecht","Kommt auf die Person an"]],
+["Was ist deine grösste Stärke?",["Disziplin","Kreativität","Humor","Intelligenz"]],
+["Was ist deine Schwäche?",["Ungeduld","Faulheit","Perfektionismus","Nervosität"]],
+["Wie sozial bist du?",["Sehr","Mittel","Wenig","Kommt auf die Leute an"]],
+["Was ist dir bei anderen Menschen wichtig?",["Respekt","Ehrlichkeit","Humor","Loyalität"]],
+["Wie gehst du mit Geld um?",["Sparsam","Normal","Ich gebe viel aus","Kommt auf die Laune an"]],
+["Wie reagierst du auf Konflikte?",["Direkt ansprechen","Ausweichen","Ruhig bleiben","Emotional"]],
+["Was ist dir im Leben am wichtigsten?",["Familie","Freunde","Erfolg","Freiheit"]],
+["Wie gut kannst du alleine sein?",["Sehr gut","Mittel","Schlecht","Kommt auf die Situation an"]],
+["Wie spontan bist du?",["Sehr","Mittel","Gar nicht","Nur bei guten Ideen"]],
+["Was ist deine Lieblingsaktivität draussen?",["Sport","Spazieren","Reisen","Chillen"]],
+["Wie gehst du mit Verantwortung um?",["Sehr gut","Gut","Mittel","Nicht so gut"]],
+["Was ist dir bei der Schule wichtig?",["Gute Noten","Freunde","Lehrer","Pausen"]],
+["Wie ehrgeizig bist du?",["Sehr","Mittel","Wenig","Kommt auf das Thema an"]],
+["Wie gehst du mit Regeln um?",["Halte mich dran","Manchmal","Nur wenn nötig","Ich mag keine Regeln"]],
+["Was ist dein Traumziel im Leben?",["Viel Geld","Glücklich sein","Karriere","Freiheit"]],
+["Wie gut kannst du im Team arbeiten?",["Sehr gut","Gut","Mittel","Lieber alleine"]],
+["Wie wichtig ist dir deine Zukunft?",["Sehr wichtig","Wichtig","Mittel","Denke nicht viel darüber nach"]]
+];
+
+const wanglenAnswers = [
+"Abend","Spass","Bauchgefühl","Freunde treffen","Sehr gut","Abenteuer","Sehr","Spass","Mutig","Videos",
+"Weiterprobieren","Spass","Gut","Intelligenz","Perfektionismus","Mittel","Humor","Normal","Ruhig bleiben","Familie",
+"Sehr gut","Sehr","Chillen","Sehr gut","Freunde","Sehr","Ich mag keine Regeln","Glücklich sein","Sehr gut","Sehr wichtig"
+];
+
+let i = 0;
+let score = 0;
+
+function startQuiz(){
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("quiz").style.display = "block";
+  load();
+}
+
+function load(){
+  document.getElementById("progress").innerText = `Frage ${i+1} / 30`;
+  document.getElementById("question").innerText = questions[i][0];
+
+  let html = "";
+  questions[i][1].forEach(ans=>{
+    html += `<button class="btn" onclick="answer('${ans}')">${ans}</button>`;
+  });
+
+  document.getElementById("answers").innerHTML = html;
+}
+
+function answer(ans){
+
+  let u = ans.toLowerCase();
+  let w = wanglenAnswers[i].toLowerCase();
+
+  if(u.includes(w.split(" ")[0]) || w.includes(u.split(" ")[0])){
+    score++;
+  }
+
+  i++;
+
+  if(i < questions.length){
+    load();
+  } else {
+    show();
+  }
+}
+
+function show(){
+  document.getElementById("quiz").style.display = "none";
+
+  let percent = Math.round((score / 30) * 100);
+
+  let text =
+    percent > 90 ? "👑 Du bist Wanglen selbst!"
+  : percent > 75 ? "🔥 Sehr starke Ähnlichkeit!"
+  : percent > 55 ? "😎 Gute Wanglen-Vibes"
+  : "🙂 Mittel";
+
+  document.getElementById("result").style.display = "block";
+  document.getElementById("result").innerHTML =
+    `${percent}% Ähnlichkeit<br><br><span class="small">${text}</span>`;
+}
+
+</script>
+
+</body>
+</html>
